@@ -1,12 +1,39 @@
 import React, { use } from 'react';
 import TicketCard from './TicketCard';
+import Task from '../Tasks/Task';
+import {  toast } from 'react-toastify';
 
-const TicketContainer = ({ ticketPromises }) => {
+const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveCount, setResolveCount }) => {
     
 
     const tickets = use(ticketPromises);
 
     console.log(tickets);
+
+    const handleTicket = (ticket) => {
+
+        setTicketCount([...ticketCount, ticket])
+        toast(`Task Added`)
+        
+        
+    }
+
+    const handleResolvedTask = (ticket) => {
+
+        console.log('ticked Resolve id', ticket.id);
+        
+
+        
+        const remainingTicket = ticketCount.filter(resolveCount => resolveCount.id !== ticket.id);
+        setResolveCount([...resolveCount, ticket]);
+        setTicketCount(remainingTicket);
+        toast("The Task is solved")
+        // console.log(remainingTicket);
+        
+
+
+        
+    }
     
 
     return (
@@ -16,12 +43,21 @@ const TicketContainer = ({ ticketPromises }) => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>
 
                 {
-                    tickets.map(ticket=><TicketCard ticket={ticket} key={ticket.id}></TicketCard>)
+                    tickets.map(ticket=><TicketCard ticket={ticket} handleTicket={handleTicket} key={ticket.id}></TicketCard>)
                 }
                 </div>
             </div>
             <div className='w-full lg:w-1/4  px-3 box-border'>
-                <h1 className='text-left mb-4 text-2xl font-bold'>Task Status</h1>
+                <h1 className='text-left mb-4 text-2xl font-bold '>Task Status</h1>
+                <div className='space-y-4 h-80 overflow-auto'>
+                    {
+                        ticketCount.map(ticket => <Task ticket={ticket} handleResolvedTask={handleResolvedTask} key={ticket.id}></Task>)
+                    }
+                </div>
+                <div>
+                    <h1 className='text-left mb-4 text-2xl font-bold'>Task Solved</h1>
+
+                </div>
 
             </div>
             

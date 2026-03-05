@@ -2,7 +2,8 @@ import React from 'react';
 import bgImageOne from '../../assets/vector1.png'
 // import bgImageTwo from '../../assets/vector2.png'
 
-const Banner = () => {
+const Banner = ({ ticketCount, resolveCount }) => {
+    
     return (
         <div className='my-14 grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-7 px-3 box-border mb-24'>
 
@@ -11,7 +12,7 @@ const Banner = () => {
                 <div style={{ backgroundImage: `url(${bgImageOne}), url(${bgImageOne})` }} className=' inset-1 bg-no-repeat bg-contain opacity-80 absolute'></div>
 
                 <h1 className='text-3xl font-bold'>In-Progress </h1>
-                <p className='text-6xl font-bold my-4'>0</p>
+                <p className='text-6xl font-bold my-4'>{ ticketCount.length}</p>
                 
 
             </div>
@@ -22,7 +23,7 @@ const Banner = () => {
                 <div style={{ backgroundImage: `url(${bgImageOne})` }} className=' inset-0 bg-no-repeat bg-contain opacity-90 absolute bg-blend-overlay'></div>
 
                 <h1 className='text-3xl font-bold'>Resolve </h1>
-                <p className='text-6xl font-bold my-4'>0</p>
+                <p className='text-6xl font-bold my-4'>{ resolveCount.length}</p>
                 
 
             </div>
