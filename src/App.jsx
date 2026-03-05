@@ -28,7 +28,7 @@ function App() {
   const [ticketCount, setTicketCount] = useState([]);
   const [resolveCount, setResolveCount] = useState([]);
 
-  console.log('Tickets here to resolve', ticketCount);
+  // console.log('Tickets here to resolve', ticketCount);
   
 
   

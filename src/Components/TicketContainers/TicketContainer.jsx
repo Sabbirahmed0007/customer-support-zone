@@ -1,17 +1,21 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import TicketCard from './TicketCard';
 import Task from '../Tasks/Task';
 import {  toast } from 'react-toastify';
+import ResolvedTask from '../Tasks/ResolvedTask';
 
 const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveCount, setResolveCount }) => {
     
 
     const tickets = use(ticketPromises);
+    const [remainedTickets, setRemainedTicket]=useState(tickets)
 
-    console.log(tickets);
+    // console.log(tickets);
 
     const handleTicket = (ticket) => {
 
+        const displayRemainedTicket = remainedTickets.filter(displayedticket => displayedticket.id !== ticket.id);
+        setRemainedTicket(displayRemainedTicket);
         setTicketCount([...ticketCount, ticket])
         toast(`Task Added`)
         
@@ -20,7 +24,7 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
 
     const handleResolvedTask = (ticket) => {
 
-        console.log('ticked Resolve id', ticket.id);
+        // console.log('ticked Resolve id', ticket.id);
         
 
         
@@ -43,7 +47,7 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>
 
                 {
-                    tickets.map(ticket=><TicketCard ticket={ticket} handleTicket={handleTicket} key={ticket.id}></TicketCard>)
+                    remainedTickets.map(ticket=><TicketCard ticket={ticket} handleTicket={handleTicket} key={ticket.id}></TicketCard>)
                 }
                 </div>
             </div>
@@ -56,6 +60,11 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
                 </div>
                 <div>
                     <h1 className='text-left mb-4 text-2xl font-bold'>Task Solved</h1>
+                    <div className='space-y-5 h-96 overflow-auto'>
+                        {
+                            resolveCount.map(resovedTicket => <ResolvedTask resolvedTickets={resovedTicket} key={resovedTicket.id}></ResolvedTask>)
+                        }
+                    </div>
 
                 </div>
 

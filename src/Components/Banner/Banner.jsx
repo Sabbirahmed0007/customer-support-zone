@@ -22,7 +22,7 @@ const Banner = ({ ticketCount, resolveCount }) => {
             <div className='bg-gradient-to-br from-[#54CF68] to-[#00827A] bg-blend-overlay text-center py-16  relative rounded-lg'>
                 <div style={{ backgroundImage: `url(${bgImageOne})` }} className=' inset-0 bg-no-repeat bg-contain opacity-90 absolute bg-blend-overlay'></div>
 
-                <h1 className='text-3xl font-bold'>Resolve </h1>
+                <h1 className='text-3xl font-bold'>Resolved </h1>
                 <p className='text-6xl font-bold my-4'>{ resolveCount.length}</p>
                 
 
