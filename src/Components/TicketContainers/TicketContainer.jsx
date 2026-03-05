@@ -17,7 +17,7 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
         const displayRemainedTicket = remainedTickets.filter(displayedticket => displayedticket.id !== ticket.id);
         setRemainedTicket(displayRemainedTicket);
         setTicketCount([...ticketCount, ticket])
-        toast(`Task Added`)
+        toast(`Task Added!`)
         
         
     }
@@ -31,7 +31,7 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
         const remainingTicket = ticketCount.filter(resolveCount => resolveCount.id !== ticket.id);
         setResolveCount([...resolveCount, ticket]);
         setTicketCount(remainingTicket);
-        toast("The Task is solved")
+        toast("The Task is solved!")
         // console.log(remainingTicket);
         
 
