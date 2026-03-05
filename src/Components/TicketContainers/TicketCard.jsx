@@ -20,10 +20,10 @@ const TicketCard = ({ ticket, handleTicket }) => {
             <div className='flex items-center justify-between my-3'>
                 <div className='flex items-center justify-center gap-5'>
                     <p>#{id}</p>
-                    <p className={`${priority.toLowerCase() === 'high' ? 'text-[#F83044]' : priority.toLowerCase() === 'medium' ? 'text-[#FEBB0C]' :'text-[#02A53B]'}`}>{ priority}</p>
+                    <p className={`${priority.toLowerCase() === 'high' ? 'text-[#F83044]' : priority.toLowerCase() === 'medium' ? 'text-[#FEBB0C]' :'text-[#02A53B]'} font-semibold text-sm`}>{ priority} Priority</p>
                 </div>
                 <div className='flex items-center justify-center gap-5'>
-                    <h2>{customer}</h2>
+                    <h2 className=' font-semibold'>{customer}</h2>
                     <p className='flex items-center gap-2 text-sm'><FaCalendar></FaCalendar>{ createdAt}</p>
                 </div>
 

@@ -46,7 +46,7 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
                 <h1 className='text-left mb-4 text-2xl font-bold'>Customer Tickets</h1>
                 <div>
                      {
-                        remainedTickets.length === 0? <div className='flex items-center justify-center h-96'><h1>Opps! No Ticket Remained</h1></div>:<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>     
+                        remainedTickets.length === 0? <div className='flex items-center justify-center h-96'><h1>Opps! No Ticket Found</h1></div>:<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>     
 
                 {
                     remainedTickets.map(ticket=><TicketCard ticket={ticket} handleTicket={handleTicket} key={ticket.id}></TicketCard>)
@@ -58,9 +58,9 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
             </div>
             <div className='w-full lg:w-1/4  px-3 box-border'>
                 <h1 className='text-left mb-4 text-2xl font-bold '>Task Status</h1>
-                <div>
+                <div className='mb-5'>
                     {
-                        ticketCount.length === 0 ? <div className='h-80 '>Select a ticket to add to Task Status</div> :<div className='space-y-4 h-80 overflow-auto'>
+                        ticketCount.length === 0 ? <div className=' '>Select a ticket to add to Task Status</div> :<div className='space-y-4 h-80 overflow-auto'>
                     {
                         ticketCount.map(ticket => <Task ticket={ticket} handleResolvedTask={handleResolvedTask} key={ticket.id}></Task>)
                     }
