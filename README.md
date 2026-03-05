@@ -21,3 +21,10 @@ Lifting state up is most commonly used method in react to share state between co
 
 ## 5. How is event handling done in React?
 Answer: Events are very easy to handle in react. It a process of responding to user interaction. Events are handled by passing a function as an event handler to a JSX element in react.Events handling in React allows components to respond to user actions by using event attributes like onClick, onBlur attributes. Event handlers are used along with satete to manage and update the UI dinamically on the basis of user's action.
+
+
+
+# submission
+
+- ## Live Link: https://customer-support-zone-pied.vercel.app/
+- ## Github Repository: https://github.com/Sabbirahmed0007/customer-support-zone
