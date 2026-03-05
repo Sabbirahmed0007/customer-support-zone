@@ -44,27 +44,42 @@ const TicketContainer = ({ ticketPromises, ticketCount, setTicketCount, resolveC
         <div className=' w-full flex items-start flex-col lg:flex-row justify-around gap-3  lg:mx-0 px-3 box-border '>
             <div className=' w-full lg:w-3/4  '>
                 <h1 className='text-left mb-4 text-2xl font-bold'>Customer Tickets</h1>
-                <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>
+                <div>
+                     {
+                        remainedTickets.length === 0? <div className='flex items-center justify-center h-96'><h1>Opps! No Ticket Remained</h1></div>:<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>     
 
                 {
                     remainedTickets.map(ticket=><TicketCard ticket={ticket} handleTicket={handleTicket} key={ticket.id}></TicketCard>)
                 }
                 </div>
+                    }
+                </div>
+                
             </div>
             <div className='w-full lg:w-1/4  px-3 box-border'>
                 <h1 className='text-left mb-4 text-2xl font-bold '>Task Status</h1>
-                <div className='space-y-4 h-80 overflow-auto'>
+                <div>
+                    {
+                        ticketCount.length === 0 ? <div className='h-80 '>Select a ticket to add to Task Status</div> :<div className='space-y-4 h-80 overflow-auto'>
                     {
                         ticketCount.map(ticket => <Task ticket={ticket} handleResolvedTask={handleResolvedTask} key={ticket.id}></Task>)
                     }
                 </div>
+                    }
+                </div>
+                
                 <div>
                     <h1 className='text-left mb-4 text-2xl font-bold'>Task Solved</h1>
-                    <div className='space-y-5 h-96 overflow-auto'>
+                    <div>
+                        {
+                            resolveCount.length === 0 ? <div>No resolved tasks yet.</div>:<div className='space-y-5 h-96 overflow-auto'>
                         {
                             resolveCount.map(resovedTicket => <ResolvedTask resolvedTickets={resovedTicket} key={resovedTicket.id}></ResolvedTask>)
                         }
                     </div>
+                        }
+                    </div>
+                    
 
                 </div>
 

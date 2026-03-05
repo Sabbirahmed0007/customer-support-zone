@@ -7,7 +7,7 @@ const TicketCard = ({ ticket, handleTicket }) => {
     const { title, status, description, id, customer, priority, createdAt }= ticket
 
     return (
-        <div onClick={()=>handleTicket(ticket)} className='bg-white text-black shadow-lg p-3 box-border rounded-md font-inter'>
+        <div onClick={()=>handleTicket(ticket)} className='bg-white cursor-pointer text-black shadow-lg p-3 box-border rounded-md font-inter'>
 
             <div className='flex items-center justify-between mb-3'>
                 <h1 className='text-lg font-semibold'>{title}</h1>
