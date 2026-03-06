@@ -1,6 +1,6 @@
 import React from 'react';
 import bgImageOne from '../../assets/vector1.png'
-import bgImageTwo from '../../assets/Vector-bg2.png'
+import bgImageTwo from '../../assets/vector-bg2.png'
 
 const Banner = ({ ticketCount, resolveCount }) => {
     
