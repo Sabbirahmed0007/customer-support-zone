@@ -12,7 +12,7 @@ const Footer = () => {
 
             <div>
                 <h1 className=' text-xl lg:text-2xl font-bold font-inter mb-3'>CS — Ticket System</h1>
-                <p className='text-gray-400 text-xs'>
+                <p className='text-gray-400 text-xs text-justify'>
                     We provide a smart and efficient customer support platform designed to help businesses manage and resolve customer issues seamlessly.
 
                     From login issues and payment failures to subscription problems and technical bugs, our platform ensures that every concern is properly recorded, monitored, and addressed.
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
 
             </div>
-            <div className="footer sm:footer-horizontal footer-center text-base-content p-4  border-t-1 border-gray-500">
+            <div className="footer sm:footer-horizontal footer-center text-base-content p-4  border-t border-gray-500">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by <span className='uppercase font-semibold'>CS — Ticket System</span> </p>
                 </aside>
